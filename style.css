@@ -1,0 +1,113 @@
+/* Increff Standard Styling */
+body {
+    background-color: #F4F7F9;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.text-xs {
+    font-size: 11px;
+}
+
+.text-sm {
+    font-size: 13px;
+}
+
+.text-lg {
+    font-size: 18px;
+}
+
+/* Dashboard Card */
+.increff-card {
+    background: #FFFFFF;
+    border-left: 4px solid #0052FF !important;
+    /* Standard Increff Blue */
+}
+
+/* Form Elements */
+.focus-primary:focus {
+    border-color: #0052FF;
+    box-shadow: 0 0 0 0.2rem rgba(0, 82, 255, 0.1);
+}
+
+.increff-dropzone {
+    background-color: #FCFDFF;
+    border-color: #DCE3E9;
+    transition: all 0.2s ease;
+}
+
+.increff-dropzone:hover,
+.drop-zone-active {
+    background-color: #F0F5FF;
+    border-color: #0052FF !important;
+}
+
+/* System Terminal */
+.terminal-box {
+    background-color: #1A1C22;
+    border-radius: 2px;
+    height: 120px;
+    overflow-y: auto;
+    border-bottom: 3px solid #0052FF;
+}
+
+/* Success Components */
+.success-icon-box {
+    width: 60px;
+    height: 60px;
+    background-color: #2ECC71;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(46, 204, 113, 0.2);
+}
+
+.btn-primary {
+    background-color: #0052FF;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0041CC;
+}
+
+/* Layout Utilities */
+.tracking-widest {
+    letter-spacing: 0.15em;
+}
+
+.shadow-inner {
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Animations */
+.animate-fade-in {
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.animate-slide-up {
+    animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
