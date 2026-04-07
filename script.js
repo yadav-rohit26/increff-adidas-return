@@ -32,11 +32,36 @@ if(submitBtn) {
         const userId = document.getElementById('user-id').value.trim();
         const file = fileInput.files[0];
 
-        // Validation Block
-        if (!marketplace || !userId || !file) { 
-            alert("Please complete all fields!"); 
-            return; 
+        // Reset Validation UI
+        document.getElementById('marketplace-error').classList.add('d-none');
+        document.getElementById('email-error').classList.add('d-none');
+        document.getElementById('file-error').classList.add('d-none');
+
+        let isValid = true;
+        
+        if (!marketplace) {
+            document.getElementById('marketplace-error').classList.remove('d-none');
+            isValid = false;
         }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const emailErrorEl = document.getElementById('email-error');
+        if (!userId) {
+            emailErrorEl.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> Please enter your email ID';
+            emailErrorEl.classList.remove('d-none');
+            isValid = false;
+        } else if (!emailRegex.test(userId)) {
+            emailErrorEl.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> Please enter a valid email address';
+            emailErrorEl.classList.remove('d-none');
+            isValid = false;
+        }
+
+        if (!file) {
+            document.getElementById('file-error').classList.remove('d-none');
+            isValid = false;
+        }
+
+        if (!isValid) return;
 
         // Switch to Processing State
         document.getElementById('ui-upload').classList.add('d-none');
