@@ -37,11 +37,11 @@ if (loginBtn) {
             // Trigger Animation & Feedback
             loginBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Authenticating...';
             document.body.classList.add('animate-page-exit');
-// <<<<<<< HEAD
+            // <<<<<<< HEAD
 
-// =======
-            
-// >>>>>>> f0edf379127faa186aa90e33131bc5a106b56e43
+            // =======
+
+            // >>>>>>> f0edf379127faa186aa90e33131bc5a106b56e43
             // Wait for animation to finish before redirecting
             setTimeout(() => {
                 window.location.href = 'upload.html';       // Navigate to app
@@ -65,11 +65,11 @@ if (loginBtn) {
             loginBtn.click();
         }
     };
-// <<<<<<< HEAD
+    // <<<<<<< HEAD
 
-// =======
-    
-// >>>>>>> f0edf379127faa186aa90e33131bc5a106b56e43
+    // =======
+
+    // >>>>>>> f0edf379127faa186aa90e33131bc5a106b56e43
     if (userField && passwordField) {
         userField.addEventListener('keypress', handleEnter);
         passwordField.addEventListener('keypress', handleEnter);

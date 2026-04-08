@@ -4,9 +4,9 @@ const N8N_URL = 'https://n8n.omni.increff.com/webhook/return-sync';
 /**
  * Global Session Management: Clears localStorage
  */
-function logout() { 
-    localStorage.removeItem('isLoggedIn'); 
-    window.location.href = 'index.html'; 
+function logout() {
+    localStorage.removeItem('isLoggedIn');
+    window.location.href = 'index.html';
 }
 
 const dropZone = document.getElementById('drop-zone');
@@ -16,8 +16,8 @@ const submitBtn = document.getElementById('submit-btn');
 /**
  * File Input Trigger Mapping
  */
-if(dropZone) dropZone.onclick = () => fileInput.click();
-if(fileInput) fileInput.onchange = () => {
+if (dropZone) dropZone.onclick = () => fileInput.click();
+if (fileInput) fileInput.onchange = () => {
     if (fileInput.files.length) {
         document.getElementById('file-label').innerHTML = `Selected: <b class="text-primary">${fileInput.files[0].name}</b>`;
     }
@@ -26,7 +26,7 @@ if(fileInput) fileInput.onchange = () => {
 /**
  * Main Payload Submission Logic
  */
-if(submitBtn) {
+if (submitBtn) {
     submitBtn.onclick = async () => {
         const marketplace = document.getElementById('marketplace-select').value;
         const userId = document.getElementById('user-id').value.trim();
@@ -38,7 +38,7 @@ if(submitBtn) {
         document.getElementById('file-error').classList.add('d-none');
 
         let isValid = true;
-        
+
         if (!marketplace) {
             document.getElementById('marketplace-error').classList.remove('d-none');
             isValid = false;
@@ -80,12 +80,12 @@ if(submitBtn) {
                 // Switch to Success State
                 document.getElementById('ui-processing').classList.add('d-none');
                 document.getElementById('ui-success').classList.remove('d-none');
-            } else { 
-                throw new Error("n8n Server Handshake Failed"); 
+            } else {
+                throw new Error("n8n Server Handshake Failed");
             }
-        } catch (err) { 
-            alert("Sync Failed: " + err.message); 
-            location.reload(); 
+        } catch (err) {
+            alert("Sync Failed: " + err.message);
+            location.reload();
         }
     };
 }
